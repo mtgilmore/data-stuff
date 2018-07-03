@@ -12,7 +12,7 @@ text_data_html = html_nodes(webpage, '.mw-parser-output p')
 child = html_children(text_data_html)
 child = as.character(child)
 
-links = list("")
+links = array('')
 count = 1
 
 # search all tags from the page
