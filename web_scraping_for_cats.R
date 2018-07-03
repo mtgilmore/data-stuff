@@ -12,8 +12,21 @@ text_data_html = html_nodes(webpage, '.mw-parser-output p')
 child = html_children(text_data_html)
 child = as.character(child)
 
+links = list("")
+count = 1
+
+#search all tags from the page
 for (i in 1:length(child)) {
+  
+  #look for a wiki link
   if (substr(child[i],1,15) == "<a href=\"/wiki/") {
-    print(substr(child[i],16,25))
+    #update list of all links
+    append(links, "")
+    j = 16
+    while (substr(child[i],j,j) != "\"") {
+      links[count] = substr(child[i],16,j)
+      j = j + 1
+    }
+    count = count + 1
   }
 }
