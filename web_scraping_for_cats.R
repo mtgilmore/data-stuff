@@ -15,13 +15,16 @@ child = as.character(child)
 links = list("")
 count = 1
 
-#search all tags from the page
+# search all tags from the page
 for (i in 1:length(child)) {
   
-  #look for a wiki link
+  # look for a wiki link
   if (substr(child[i],1,15) == "<a href=\"/wiki/") {
-    #update list of all links
+    
+    # update list of all links
     append(links, "")
+    
+    # extract name of each page
     j = 16
     while (substr(child[i],j,j) != "\"") {
       links[count] = substr(child[i],16,j)
@@ -29,4 +32,5 @@ for (i in 1:length(child)) {
     }
     count = count + 1
   }
+  
 }
