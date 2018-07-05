@@ -1,5 +1,7 @@
+install.packages('rvest')
+install.packages('qgraph')
 library('rvest')
-library('igraph')
+library('qgraph')
 
 intitial_page = 'Cat'
 initial_link = paste('https://en.wikipedia.org/wiki/', intitial_page)
@@ -30,4 +32,3 @@ for (i in 1:length(child)) {
     count = count + 1
   }
 }
-
